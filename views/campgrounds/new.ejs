@@ -3,7 +3,13 @@
 <div class="row">
   <h1 class="thxt-centre">NEW CAMPGROUND</h1>
   <div class="col-6 offset-3">
-    <form action="/campgrounds" method="post" novalidate class="validated-form">
+    <form
+      action="/campgrounds"
+      method="post"
+      novalidate
+      class="validated-form"
+      enctype="multipart/form-data"
+    >
       <div class="mb-3">
         <label class="form-label" for="title">TITLE</label>
         <input
@@ -40,10 +46,11 @@
             aria-describedby="price-input"
             name="campground[price]"
             required
-          /><div class="valid-feedback">looks Good!!</div>
+          />
+          <div class="valid-feedback">looks Good!!</div>
         </div>
       </div>
-      <div class="mb-3">
+      <!-- <div class="mb-3">
         <label class="form-label" for="image">IMAGE</label>
         <input
           class="form-control"
@@ -53,7 +60,7 @@
           required
         />
         <div class="valid-feedback">looks Good!!</div>
-      </div>
+      </div> -->
 
       <div class="mb-3">
         <label class="form-label" for="description">DESCRIPTION</label>
@@ -68,10 +75,25 @@
         <div class="valid-feedback">looks Good!!</div>
       </div>
       <div class="mb-3">
+        <div class="input-group mb-3">
+          <input
+            type="file"
+            class="form-control"
+            id="inputGroupFile02"
+            name="image"
+            multiple
+          />
+
+          <!-- <input type="file" name="image" multiple /> -->
+          <label class="input-group-text" for="inputGroupFile02">Upload</label>
+        </div>
+      </div>
+      <!-- <input type="file" name="image" multiple /> -->
+
+      <div class="mb-3">
         <button class="btn btn-success">ADD CAMPGROUND</button>
       </div>
     </form>
     <a href="/campgrounds">Discard and go back</a>
   </div>
 </div>
-
